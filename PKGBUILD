@@ -19,7 +19,8 @@ source=(https://dl.suckless.org/$pkgname/$pkgname-$pkgver.tar.gz
         delkey.diff
         scrollback.diff
         scrollback-mouse.diff
-        dracula.diff)
+        dracula.diff
+        zp4rker.diff)
 sha256sums=('ea6832203ed02ff74182bcb8adaa9ec454c8f989e79232cb859665e2f544ab37'
             'f9deea445a5c6203a0e8e699f3c3b55e27275f17fb408562c4dd5d649edeea23'
             '0ebcbba881832adf9c98ce9fe7667c851d3cc3345077cb8ebe32702698665be2'
@@ -28,7 +29,8 @@ sha256sums=('ea6832203ed02ff74182bcb8adaa9ec454c8f989e79232cb859665e2f544ab37'
             '946051d123dfe21d8f5ef0f1070c473443f4779dc0bd7edf7c8497f67e325a49'
             'dc7f5223b26fc813d91d4ae35bdaa54d63024cae9f18afd9b3594ba3399dfa55'
             '46ac9bcdbfeb0011533207cb0ab31657a3eb9196da1d0db346e6a9d1fc4b4f76'
-            '1ffeaf2c425976d075ac93b2a5658564b91ae3501d2a13192918a92efc20be51')
+            '1ffeaf2c425976d075ac93b2a5658564b91ae3501d2a13192918a92efc20be51'
+            '748ea4637e8ed4fda6e691c2062b891b6f805c4d0502becc49054eb3c37d2d57')
 _sourcedir=$pkgname-$pkgver
 _makeopts="--directory=$_sourcedir"
 
@@ -40,6 +42,8 @@ prepare() {
   patch --directory="$_sourcedir" < delkey.diff
   patch --directory="$_sourcedir" < scrollback.diff
   patch --directory="$_sourcedir" < scrollback-mouse.diff
+
+  patch --directory="$_sourcedir" < zp4rker.diff
 
   # This package provides a mechanism to provide a custom config.h. Multiple
   # configuration states are determined by the presence of two files in
